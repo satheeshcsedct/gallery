@@ -1,0 +1,70 @@
+<div class="userfield">
+<h2>Sign up</h2>
+
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	<%= devise_error_messages! %>
+	<fieldset>
+    <legend>create your personal details:</legend>
+  <table><tr><td><div class="fields">
+		<%= f.label :firstname %>
+		<%= f.text_field :firstname %>
+	</div></td>
+
+	<td><div class="fields">
+		<%= f.label :lastname %>
+		<%= f.text_field :lastname %>
+	</div></td>
+
+	<td><div class="fields" >
+		<%= f.label :age %>
+		<%= f.text_field :age %>
+	</div></td></tr><tr><td></td></tr>
+
+	<tr><td><div class="fields">
+		<%= f.label :gender %>
+		<%= f.select(:gender,(["Male","Female"]))%>
+	</div></td>
+
+	<td><div class="fields">
+		<%= f.label :dateofbirth %>
+		<%= f.date_select :dateofbirth ,:start_year => 1990 %>
+	</div></td><tr></table></fieldset></br></br>
+
+	<fieldset>
+    <legend>create your Account details:</legend>
+	<table><tr><td><div class="fields">
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+	</div></td>
+
+	<td><div class="fields">
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+  </div></td>
+
+	<td><div class="fields">
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+  </div></td></tr></table></fieldset></br></br>
+
+	<fieldset>
+    <legend>create your contact details:</legend>
+    <table><tr><td><div class="fields" %>
+		<label for="user_phone">phone</label>
+		<%= f.text_field :phone %>
+	</div></td>
+
+	<td><div class="fields" >
+		<label for="user_address">Address</label>
+		<%= f.text_area :address %></br>
+	</div></td></tr></table></fieldset></br></br>
+
+
+	<center><div class="fields">
+		<%= f.submit "Sign up" %>
+	</div></center>
+<% end %>
+
+<%= render "links" %>
+</div>
